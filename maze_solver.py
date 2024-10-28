@@ -3,7 +3,7 @@ from a_star import aStarAlg
 import random
 
 # Create Maze instance
-myMaze = maze(101,101)
+myMaze = maze(30,30)
 # Generate start (center) and goal positions (random)
 start = (myMaze.rows//2 + 1, myMaze.cols//2 + 1)
 goal = (random.randint(1, myMaze.rows+1), random.randint(1, myMaze.cols+1))
