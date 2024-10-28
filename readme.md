@@ -49,22 +49,19 @@ The size of the state space would depend on the number and locations of intersec
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.008.png)
 
 ## **Algorithm** 
-1. **Define** the starting cell of the agent and the goal cell it aims to reach. In this example *(see figure 1),* the goal cell is located at position (1,1) and the start cell is at location (4,4). 
+1. **Define** the starting cell of the agent and the goal cell it aims to reach. In this example the goal cell is located at position (1,1) and the start cell is at location (4,4). 
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.009.png)
 
 
-2. **Initialize** the ***g\_cost*** of the start cell with** 0 and the ***h\_cost*** with the heuristic function of the start cell. The ***f\_cost*** of start cell is going to be the summation of both ***g*** and **h**. In this example *(see figure 2)*, ***g\_cost = 0***, ***h\_cost = 6***; hence, ***f\_cost = 0 + 6 = 6***. 
+2. **Initialize** the ***g\_cost*** of the start cell with** 0 and the ***h\_cost*** with the heuristic function of the start cell. The ***f\_cost*** of start cell is going to be the summation of both ***g*** and **h**. In this example, ***g\_cost = 0***, ***h\_cost = 6***; hence, ***f\_cost = 0 + 6 = 6***. 
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.010.jpeg)
 
-**Figure 2** 
 
 3) **Initialize** the ***g\_costs***, ***h\_costs*** and ***f\_costs*** of all remaining cells with infinity. 
 
 ![](images/images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.011.jpeg)
-
-**Figure 3** 
 
 4) **Create** the ***open\_list*** using a priority queue data structure and add the starting cell with its ***f\_cost***, ***h\_cost*** and ***coordinates tuple***. 
 4) **Create** the dictionaries and lists for path memorization.  
@@ -76,13 +73,11 @@ The size of the state space would depend on the number and locations of intersec
 1. If the current cell is the goal, **break**. 
 1. Else, **explore** all neighboring cells that are not walls. 
 1. For each neighboring cell:  
-   1. Calculate the ***g\_cost**, **h\_cost*** and ***f\_cost*** *(see figures 5 & 6)*. 
+   1. Calculate the ***g\_cost**, **h\_cost*** and ***f\_cost***. 
    1. If the ***f\_cost*** is lower than the current value for that cell in the dictionary of costs, update all costs and add them to the ***open\_list***. 
 1. Add the cell to the ***rvrsPath*** as a candidate. 
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.012.jpeg) ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.013.jpeg)
-
-**Figure 4  Figure 5** 
 
 7) Deduce the forward path ***fwdPath*** from the reversed path ***rvrsPath*** and return all three paths form the algorithm. 
 5. **Results<a name="_page8_x68.00_y403.92"></a>** 
@@ -91,37 +86,28 @@ The size of the state space would depend on the number and locations of intersec
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.014.jpeg)
 
-**Figure 6:** Starting Maze configuration** 
-
 **Step 1:** Agent examines the cells’ total cost ***f\_cost*** until it finds the goal. 
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.015.jpeg) ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.016.jpeg)
 
-**Figure 7  Figure 8 Step 2:** Agent found the goal and traces its way back to the starting goal. 
+**Step 2:** Agent found the goal and traces its way back to the starting goal. 
 
-*Robot Maze Solver Report  | CSE464a | Spring 2023* 
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.017.jpeg)
 
-**Figure 9** 
 
 **Step 3:** Agent moves towards the goal.  
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.018.jpeg)
 
-**Figure 11** 
 
-![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.019.jpeg)
+![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.019.jpeg)
 
-**Figure 10** 
 
 ![](images/Aspose.Words.6e01ec38-960c-4d25-adbd-0da46967f1d8.020.jpeg)
 
-**Figure 12** 
 
-*Robot Maze Solver Report  | CSE464a | Spring 2023* 
-
-6. **Testing<a name="_page10_x68.00_y70.92"></a>** 
+## **Testing** 
 
 The testing part of this program was conducted in a separate file called *test\_maze\_solver.py* by  a  custom  class  called  *AStarAlgTestCase()*  that  inherits  the  functions  from  *TestCase.py* module that can be found in the *unittest.py* library. 
 
@@ -216,13 +202,13 @@ self.assertIsInstance(srchPath, list) self.assertIsInstance(rvrsPath, dict) self
 
 The same set of assertions are run again. All tests were successful ! 
 
-7. **Conclusion<a name="_page13_x68.00_y70.92"></a>** 
+## **Conclusion** 
 
 In conclusion, our project was a success. To explore the maze and discover the best path, the A\* algorithm with a Manhattan distance heuristic has been used. The implementation was efficient enough so large mazes could be easily and timely computed. Our implementation of the A\* algorithm is suitable for mazes that include more than one possible path to the goal. 
 
 Overall, we are very satisfied with our results and have learned a lot from this project. We are  interested  in  looking  further  into  search  algorithms  and  explore  much  more  difficult problems. 
 
-8. **References<a name="_page13_x68.00_y286.92"></a>** 
+## **References** 
 
 [1]: M. A. Naeem, “A-Star (A\*) Search for Solving a Maze using Python (with visualization),” Medium, Oct. 26, 2021.[ https://levelup.gitconnected.com/a-star-a-search-for- solving-a-maze-using-python-with-visualization-b0cae1c3ba92 ](https://levelup.gitconnected.com/a-star-a-search-for-solving-a-maze-using-python-with-visualization-b0cae1c3ba92) 
 
@@ -234,5 +220,5 @@ Overall, we are very satisfied with our results and have learned a lot from this
 
 **Image References:** 
 
-**Figures 1 to 5** were extracted from[ https://levelup.gitconnected.com/a-star-a-search-for- solving-a-maze-using-python-with-visualization-b0cae1c3ba92 ](https://levelup.gitconnected.com/a-star-a-search-for-solving-a-maze-using-python-with-visualization-b0cae1c3ba92)
+**Figures 1 to 5** were extracted from[https://levelup.gitconnected.com/a-star-a-search-for- solving-a-maze-using-python-with-visualization-b0cae1c3ba92 ](https://levelup.gitconnected.com/a-star-a-search-for-solving-a-maze-using-python-with-visualization-b0cae1c3ba92)
 *Robot Maze Solver Report  | CSE464a | Spring 2023* 
